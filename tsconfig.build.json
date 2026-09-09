@@ -1,0 +1,17 @@
+{
+  /* Build configuration: emits runnable JavaScript into dist/.
+     The root tsconfig.json stays authoritative for editor/type-check behavior;
+     this file only overrides what emitting a Node CLI requires. */
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "module": "commonjs",                 /* The sources rely on __dirname and extensionless relative imports. */
+    "moduleResolution": "Node",
+    "outDir": "dist",
+    "rootDir": ".",
+    "declaration": true,
+    "sourceMap": true,
+    "noEmit": false
+  },
+  "include": ["src/**/*.ts", "scripts/mct.ts"],
+  "exclude": ["**/*.spec.ts", "src/test/**", "src/cli/TestUtils.ts"]
+}
